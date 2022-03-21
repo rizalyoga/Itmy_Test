@@ -20,7 +20,7 @@ const Chart = () => {
     datasets: [
       {
         data: [rejected, active, inReview],
-        backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"],
+        backgroundColor: ["rgb(255, 99, 132)", "rgb(75, 192, 192)", "rgb(255, 159, 64)"],
         hoverOffset: 3,
       },
     ],
