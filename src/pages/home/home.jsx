@@ -1,12 +1,23 @@
-import React from "react";
-import Navbar from "../../components/navbar/navbar";
+import React, { useEffect } from "react";
+import CardTotalStatus from "../../components/cards/cardTotalstatus";
+import CardHomeStatus from "../../components/cards/cardHomeStatus";
+import { useDispatch, useSelector } from "react-redux";
+import { getMedications } from "../../store/action/medicationSlice";
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  const { medications, loading } = useSelector((state) => state.medications);
+
+  useEffect(() => {
+    dispatch(getMedications());
+  }, [dispatch]);
+
   return (
     <>
-      <Navbar />
-      <div className="wraper">
-        <h1>Ini Home</h1>
+      <div className="wraper min-h-screen">
+        <CardTotalStatus />
+        <CardHomeStatus medications={medications} loading={loading} />
       </div>
     </>
   );

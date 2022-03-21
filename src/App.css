@@ -8,9 +8,15 @@
   margin: auto;
   max-width: 428px;
   min-height: 100vh;
-  background-color: aqua;
+  /* background-color: #f1f5f9; */
 }
 
 .wraper {
   margin: 0 2%;
+}
+
+.neuro {
+  border-radius: 8px;
+  background: #f7f7f7;
+  box-shadow: 5px 5px 10px #dedede, -5px -5px 10px #ffffff;
 }
