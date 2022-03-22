@@ -26,11 +26,21 @@ const Chart = () => {
     ],
   };
 
+  let total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+
   return (
-    <div className="w-[55%] h-[55%]">
+    <div className="w-[55%] h-[55%] flex justify-center items-center">
+      <p className="absolute text-sm text-center mt-3 font-bold leading-3">
+        Total <br /> {total}
+      </p>
       <Doughnut data={data} />
     </div>
   );
 };
 
 export default Chart;
+
+// const changeMargin = () => {
+//   const containers = document.getElementsByClassName("container");
+//   containers[0].style.margin = "0px";
+// };

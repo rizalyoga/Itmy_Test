@@ -36,17 +36,17 @@ const CardHomeStatus = ({ medications, loading }) => {
         <></>
       ) : (
         medications.map((data) => (
-          <div className="bg-white w-full my-3 neuro pt-1 h-36 rounded-lg cursor-pointer" key={data.id} onClick={() => toDetail(data.id)}>
+          <div className="bg-white w-full my-3 neuro pt-1 min-h-[20%] rounded-lg cursor-pointer hover:bg-white ease-in duration-300" key={data.id} onClick={() => toDetail(data.id)}>
             <h1 className={data.status === "Active" ? statusSuccess : data.status === "In Review" ? statusReview : statusRejected}>{data.status}</h1>
             <div className="mx-2 row flex ">
-              <div className="list-status w-6/12 bg-blue-500 h-full ">
+              <div className="list-status w-5/12 bg-blue-500 h-full ">
                 <p className=" text-lg font-bold">{data.full_name}</p>
                 <p className="mt-3 text-gray-500">Order Number</p>
                 <p className="text-gray-500">#{data.id}</p>
               </div>
-              <div className="charts-status w-6/12 h-full flex flex-col items-end">
+              <div className="charts-status w-7/12 h-full pb-2 flex flex-col items-end">
                 <p className="text-gray-500">{moment(data.updated_at).format("DD MMM YYYY, hh:mm ")}</p>
-                <p className="mt-9 text-lg font-bold">{data.total_price ? formatRupiah(data.total_price) : "Rp 0"}</p>
+                <p className=" mt-9 text-lg font-bold">{data.total_price ? formatRupiah(data.total_price) : "Rp 0"}</p>
               </div>
             </div>
           </div>

@@ -23,14 +23,6 @@ const Detail = () => {
     navigate("/");
   };
 
-  if (loading) {
-    return (
-      <div className="flex flex-col justify-center min-h-[95vh]">
-        <Loading />
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen">
       <div className="navigation flex items-center py-1 w-full" style={{ background: "#F7F7F7" }}>
@@ -41,9 +33,17 @@ const Detail = () => {
           <h1 className=" text-center text-xl font-bold">DETAIL PAGE</h1>
         </div>
       </div>
-      <CardDetailStatus status={detailMedications.status} />
-      <CardDetailUser patient={detailMedications.patient} address={detailMedications.address} />
-      <CardDetailPrescription image={detailMedications.prescription_image} />
+      {loading ? (
+        <div className="flex flex-col justify-center min-h-[90vh]">
+          <Loading />
+        </div>
+      ) : (
+        <>
+          <CardDetailStatus status={detailMedications.status} />
+          <CardDetailUser patient={detailMedications.patient} address={detailMedications.address} />
+          <CardDetailPrescription image={detailMedications.prescription_image} />
+        </>
+      )}
     </div>
   );
 };
