@@ -30,7 +30,7 @@ const Chart = () => {
 
   return (
     <div className="w-[55%] h-[55%] flex justify-center items-center">
-      <p className="absolute text-sm text-center mt-3 font-bold leading-3">
+      <p className="absolute text-sm text-center mt-3 font-bold leading-[14px]">
         Total <br /> {total}
       </p>
       <Doughnut data={data} />

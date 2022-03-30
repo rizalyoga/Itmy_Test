@@ -1,4 +1,5 @@
 import React from "react";
+import Map from "../map/Map";
 
 const CardDetailUser = ({ patient, address }) => {
   return (
@@ -21,6 +22,7 @@ const CardDetailUser = ({ patient, address }) => {
           {address?.second_line}, {address?.note}, {address?.postal_code}, {address?.district}, {address?.province}
         </p>
       </div>
+      <Map lati={address?.latitude} long={address?.longitude} />
     </div>
   );
 };
